@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-transform: capitalize;
+
+        }
+        body{
+            background-color:rgb(35, 47, 47) ;
+            color: rgb(244, 244, 244);
+        }
+
+        .container{
+            height: px;
+            width: 400px;
+            border: 1px solid white;
+            text-align: center;
+            margin-left: 35%;
+            margin-top: 10%;
+            background-color: white;
+            color: black;
+            
+        }
+
+        input{
+            width:300px ;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        button{
+            width: 300px;
+            background-color: rgb(100, 204, 204);
+            padding: 10px;
+            color: black;
+            border: none;
+            margin-top:7% ;
+            font-size: 20px;
+            cursor: pointer;
+            margin-bottom: 3%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1> qr code genrate</h1>
+        
+        <input type="text" placeholder="write what u genrate" id="input"> <br>
+
+
+        <button onclick="myfun()">qr genrate</button>
+
+        <img src="" alt="" id="img">
+    </div>
+    
+    <script>
+        let inp =document.getElementById("input");
+        let img = document.getElementById("img");
+
+
+        function myfun(){
+            let value =input.value;
+
+            img.style.border="1px solid black"
+            img.style.padding="15px"
+            img.style.margin="5px"
+           if(value){
+            img.src=`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${value}`
+           }
+        }
+    </script>
+</body>
+</html>
